@@ -152,6 +152,7 @@ section {
 
 .feature-item {
   text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .feature-item h3 {
@@ -164,10 +165,18 @@ section {
 }
 
 .feature-item img {
-  max-width: 180px;
   margin-bottom: 15px;
-  border-radius: 8px;
+}
+
+.feature-item img.icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
 }
 
 .screenshots .gallery {
@@ -209,4 +218,18 @@ footer {
 footer a {
   color: #fff;
   text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #eee;
+    --background: #121212;
+  }
+  body {
+    background: var(--background);
+    color: var(--text);
+  }
+  header, footer {
+    color: #fff;
+  }
 }
